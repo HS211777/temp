@@ -80,6 +80,18 @@ public class GameBoard {
         return outTile;
     }
 
+    public static int getNumTiles(int type){
+        int size = grid.size();
+        int count = 0;
+        for (int i = 0; i < size; i++){
+            Tiles myTile = grid.get(count);
+            if (myTile.getType() == type){
+                count++;
+            }
+        }
+        return count;
+    }
+
     public static void generateRocks(){
         int sRocks = IORsystems.RandomInt(30,15); // maximum and minimum number of rocks
         int mRocks = IORsystems.RandomInt(20,10);
